@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Context } from '../index';
 import { authRoutes, publicRoutes } from '../routes';
+import { observer } from 'mobx-react-lite';
 
-const AppRouter = () => {
+const AppRouter = observer(() => {
   const { user } = useContext(Context);
   console.log(user);
 
@@ -19,5 +20,5 @@ const AppRouter = () => {
       ,
     </Routes>
   );
-};
+});
 export default AppRouter;
